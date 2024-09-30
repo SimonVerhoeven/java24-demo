@@ -1,0 +1,15 @@
+= Java 24
+:toc:
+:toc-placement:
+:toclevels: 3
+
+Java 24 will be released in March of 2025, but we already know some of the features that will make it in.
+So let us take a closer look at what's awaiting us!
+
+== Final
+
+== Preview
+
+== Incubation
+
+== Removed
