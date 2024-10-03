@@ -8,6 +8,8 @@ So let us take a closer look at what's awaiting us!
 
 == Final
 
+- https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI] - This JEP is geared towards issue warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default]. These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
+
 == Preview
 
 == Incubation
