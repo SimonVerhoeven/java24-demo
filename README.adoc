@@ -10,6 +10,9 @@ So let us take a closer look at what's awaiting us!
 
 - https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI] - This JEP is geared towards issue warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default]. These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
 
+== Candidate
+- https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
+
 == Preview
 
 == Incubation
