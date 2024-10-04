@@ -6,9 +6,10 @@
 Java 24 will be released in March of 2025, but we already know some of the features that will make it in.
 So let us take a closer look at what's awaiting us!
 
-== Final
+== Targeted
 
 - https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI] - This JEP is geared towards issue warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default]. These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
+- https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code. 
 
 == Candidate
 - https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
