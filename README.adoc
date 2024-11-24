@@ -12,7 +12,7 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
 - https://openjdk.org/jeps/484[JEP 484: Class-File API] - This JEP which was initially a preview in 22 and 23 aims to provide a standard API for parsing, generating and transforming Java class files. It aims to help developers handle the swifter release cadence, and thus class-file format changes. This class-file API would evolve alongside the class file format, which would reduce the reliance of library and framework developers on third-party developers to update and test their class-file libraries. Frameworks and libraries making use the standard API will support class files from the latest JDK automatically.
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
-- https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs] - This aims to facilitatie run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
+- https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs] - This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
 
 == Candidate
 - https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
@@ -22,6 +22,9 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/401[JEP 401: Value Classes and Objects] - Enhances the java platform with value objects, which are class instances that lack an object identity, and only have final fields. Popular classes that represent simple values in the JDK such as Integer will be migrated, and there'll be support for compatible migration of user-defined classes. This will help to improve the memory footprint, locality and GC efficiency.
 - https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)
 ] - This proposal aims to introduce an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivication Functions (KDFs)
+- https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
+] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
+
 
 == Incubation
 
