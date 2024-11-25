@@ -32,4 +32,6 @@ So let us take a closer look at what's awaiting us!
 
 == Incubation
 
+- https://openjdk.org/jeps/489[JEP 489 Vector API (Ninth Incubator)] - This JEP geared towards introducing an API for vector computations return for its ninth iteration. It aims to provide a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
+
 == Removed
