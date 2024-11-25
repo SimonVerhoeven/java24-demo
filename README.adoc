@@ -24,6 +24,8 @@ So let us take a closer look at what's awaiting us!
 ] - This proposal aims to introduce an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs)
 - https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
 ] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
+- https://openjdk.org/jeps/488[JEP 488: Primitive Types in Patterns, instanceof, and switch (Second Preview)
+] - This JEP first introduced as 455 returns without any changes. It aims to enhance pattern matching by allowing primitives in all pattern contexts, and allowing one to use them with instanceof and switch as well.
 - https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
 ] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
 
