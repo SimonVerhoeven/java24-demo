@@ -6,6 +6,10 @@
 Java 24 will be released in March of 2025, but we already know some of the features that will make it in.
 So let us take a closer look at what's awaiting us!
 
+== Proposed to target
+
+- https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe] - Starting in JDK 24, a runtime warning will be issued upon the first invocation of any method in sun.misc.Unsafe, which has been fully deprecated, with the recommendation that developers migrate to the standard VarHandle API (JEP 193) and Foreign Function & Memory API (JEP 454) to ensure smooth transitions in future JDK releases.
+
 == Targeted
 - https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (Experimental)] - Geared towards object header sizes on 64-bit architectures (x64 and AArch64) without introducing any major throughput or latency overhead.
 - https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI] - This JEP is geared towards issue warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default]. These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
