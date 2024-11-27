@@ -11,6 +11,7 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe] - Starting in JDK 24, a runtime warning will be issued upon the first invocation of any method in sun.misc.Unsafe, which has been fully deprecated, with the recommendation that developers migrate to the standard VarHandle API (JEP 193) and Foreign Function & Memory API (JEP 454) to ensure smooth transitions in future JDK releases.
 
 == Targeted
+- https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
 - https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (Experimental)] - Geared towards object header sizes on 64-bit architectures (x64 and AArch64) without introducing any major throughput or latency overhead.
 - https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI] - This JEP is geared towards issue warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default]. These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
@@ -19,7 +20,6 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs] - This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
 
 == Candidate
-- https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
 
 == Preview
 
