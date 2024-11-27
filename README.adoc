@@ -20,6 +20,10 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
 - https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs] - This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
 
+== Integrated
+
+- https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking] - This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of pre-loaded and pre-linked classes for subsequent runs. It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools. The approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
+
 == Candidate
 
 == Preview
