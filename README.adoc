@@ -24,6 +24,8 @@ So let us take a closer look at what's awaiting us!
 
 - https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking] - This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of pre-loaded and pre-linked classes for subsequent runs. It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools. The approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
 
+- https://openjdk.org/jeps/485[JEP 485: Stream Gatherers] - This JEP enhances the Stream API with new intermediate operations to facilitate new data operations that previously weren't easily achievable. This will be handled by facilitating the creation of custom intermediate operations to to manipulate the streams, rather than a lot of new methods of the specifically requested functions.
+
 == Candidate
 
 == Preview
