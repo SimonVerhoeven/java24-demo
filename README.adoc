@@ -28,6 +28,8 @@ So let us take a closer look at what's awaiting us!
 
 - https://openjdk.org/jeps/486[JEP 486: Permanently Disable the Security Manager] - This proposal aims to phase out the Security Manager, which has been largely unused for securing client and server-side Java code, by removing the ability to enable it during runtime and revising the Java Platform specification to minimize its references. The changes will have minimal impact on most applications and tools, with the goal of improving JDK maintainability by reducing the complexity of resource-access decision delegation. The Security Manager API will be retained in this release to provide existing code maintainers time to migrate, with no intention of providing a replacement for its previous sandboxing or API interception functionalities.
 
+- https://openjdk.org/jeps/490[JEP 490: ZGC: Remove the Non-Generational Mode] - The non-generational mode of the Z Garbage Collector (ZGC) will be removed to reduce the current maintenance cost of supporting two different modes as to speed up the development of new features.
+
 == Candidate
 
 == Preview
