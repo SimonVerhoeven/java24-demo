@@ -57,6 +57,9 @@ N/A
 - https://openjdk.org/jeps/492[JEP 492: Flexible Constructor Bodies (Third Preview)
 ] - This proposed Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases—a prologue and epilogue—to help developers place initialization logic more intuitively while preserving existing instantiation safeguards.
 
+- https://openjdk.org/jeps/494[JEP 494: Module Import Declarations (Second Preview)
+] - This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself.
+
 - https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
 ] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
 
