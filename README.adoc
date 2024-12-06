@@ -3,12 +3,10 @@
 :toc-placement:
 :toclevels: 3
 
-Java 24 will be released in March of 2025, but we already know some of the features that will make it in.
+Java 24 will be released in March 2025, but we already know some of the features that will make it in.
 So let us take a closer look at what's awaiting us!
 
 == Proposed to target
-
-- https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe] - Starting in JDK 24, a runtime warning will be issued upon the first invocation of any method in sun.misc.Unsafe, which has been fully deprecated, with the recommendation that developers migrate to the standard VarHandle API (JEP 193) and Foreign Function & Memory API (JEP 454) to ensure smooth transitions in future JDK releases.
 
 == Targeted
 - https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
@@ -26,6 +24,8 @@ So let us take a closer look at what's awaiting us!
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
 
 - https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs] - This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
+
+- https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe] - Starting in JDK 24, a runtime warning will be issued upon the first invocation of any method in sun.misc.Unsafe, which has been fully deprecated, with the recommendation that developers migrate to the standard VarHandle API (JEP 193) and Foreign Function & Memory API (JEP 454) to ensure smooth transitions in future JDK releases.
 
 == Integrated
 
