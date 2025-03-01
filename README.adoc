@@ -3,10 +3,8 @@
 :toc-placement:
 :toclevels: 3
 
-Java 24 will be released in March 2025, but we already know some of the features that will make it in.
+Java 24 will be released on the 18th of March 2025, and the full list of enhancements is now available.
 So let us take a closer look at what's awaiting us!
-
-== Proposed to target
 
 == Targeted
 - https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
