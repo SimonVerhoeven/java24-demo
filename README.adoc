@@ -27,6 +27,12 @@ Violating this will result in a warning being emitted by the JVM in the followin
 
 `WARNING: A restricted method in java.lang.System has been called`
 
+=== https://openjdk.org/jeps/484[JEP 484: Class-File API]
+
+This JEP which was initially a preview in 22 and 23 aims to provide a standard API for parsing, generating and transforming Java class files.
+
+It aims to help developers handle the swifter release cadence, and thus class-file format changes. The API would evolve alongside the class file format, which would reduce the reliance of library and framework developers on third-party developers to update and test their class-file libraries. Frameworks and libraries making use the standard API will support class files from the latest JDK automatically.
+
 == Targeted
 - https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
 
@@ -35,8 +41,6 @@ Violating this will result in a warning being emitted by the JVM in the followin
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
 
 - https://openjdk.org/jeps/479[JEP 479: Remove the Windows 32-bit x86 Port]  - As planned after the deprecation for removal in JDK 21 (JEP 449) the Windows 32 bit X86 bit source code and build support has been removed.
-
-- https://openjdk.org/jeps/484[JEP 484: Class-File API] - This JEP which was initially a preview in 22 and 23 aims to provide a standard API for parsing, generating and transforming Java class files. It aims to help developers handle the swifter release cadence, and thus class-file format changes. This class-file API would evolve alongside the class file format, which would reduce the reliance of library and framework developers on third-party developers to update and test their class-file libraries. Frameworks and libraries making use the standard API will support class files from the latest JDK automatically.
 
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
 
