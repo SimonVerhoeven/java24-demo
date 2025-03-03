@@ -11,8 +11,7 @@ import java.util.stream.Gatherer;
 import java.util.stream.Gatherers;
 import java.util.stream.IntStream;
 
-// JEP 489 Vector API - Ninth incubation
-
+/// JEP 485 - Gatherers
 
 public class GathererOverview {
     public static <T> Gatherer.Integrator<Void, T, T> passthroughIntegrator() {
