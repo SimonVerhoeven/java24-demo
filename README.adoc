@@ -40,8 +40,21 @@ This JEP enhances the Stream API with new intermediate operations to facilitate 
 
 We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j].
 
+== HotSpot
+
+=== https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)]
+
+This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational.
+
+With non-generational we mean that the heap was not split into multiple zones each containing objects of different ages. It's based upon the *Weak Generational Hypothesis* which stats that *most objects die young*. The collection of dead objects is very cheap, so if we separate the two we can target young objects to clean the heap more efficiently.
+
+The intent is to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
+
+It was originally intended to land in JDK21. but it was dropped at that time due to identified risks (see for reference https://mail.openjdk.org/pipermail/jdk-dev/2023-June/007959.html[this jdk-dev mailing list entry]) to make sure than when it landed it would deliver the best possible result.
+
+We can enable it through the following JVM options: `-XX:+UnlockExperimentalVMOptions -XX:ShenandoahGCMode=generational`.
+
 == Targeted
-- https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)] - This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational. It aims to reduce the sustained memory footprint, and reduce resource consumption. Initially it'll only support X64 and AArch64, with more instruction sets being supported later.
 
 - https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (Experimental)] - Geared towards object header sizes on 64-bit architectures (x64 and AArch64) without introducing any major throughput or latency overhead.
 
