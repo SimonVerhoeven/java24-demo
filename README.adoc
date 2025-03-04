@@ -110,3 +110,20 @@ N/A
 == Removed
 
 N/A
+
+== Lookahead
+
+General availability of Java 25 is planned for September 2025, and while at the time of writing there are no JEPs targeted at it yet, we can already make some guesses based upon the submitted candidates and drafts.
+
+Some of the ones I hope and expect to see land are:
+
+* https://openjdk.org/jeps/495[JEP-495: Simple Source Files and Instance Main Methods (Fourth Preview)]- which aims to further enhance the onboarding experience
+
+* https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)] - which would bring us immutable value holders that are at most initialized once
+
+* https://openjdk.org/jeps/8340343[JEP draft 8340343: Structured Concurrency (Fifth Preview)] - structured concurrency has received quite a bit of feedback so far, so I hope to see it land, but we'll have to see
+
+* https://openjdk.org/jeps/8326035[JEP draft 8326035: CDS Object Streaming] - proposes to add an object archiving mechanism for Class-Data Sharing (CDS) in the Z Garbage Collector (ZGC)
+
+* https://openjdk.org/jeps/8300911[JEP draft 8300911: PEM API (Preview)] - introduces an easy-to-use API for encoding and decoding Privacy-Enhanded Mail (PEM) format.
+
