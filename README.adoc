@@ -40,6 +40,14 @@ This JEP enhances the Stream API with new intermediate operations to facilitate 
 
 We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j].
 
+=== https://openjdk.org/jeps/489[JEP 489 Vector API (Ninth Incubator)]
+
+The ninth iteration API of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
+
+This iteration adds a new `Float16` which supports 16-bit variables in IEEE 754 binary16 format using the Vector API.
+
+It has also been confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
+
 == HotSpot
 
 === https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)]
@@ -101,11 +109,6 @@ N/A
 
 - https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
 ] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
-
-
-== Incubation
-
-- https://openjdk.org/jeps/489[JEP 489 Vector API (Ninth Incubator)] - This JEP geared towards introducing an API for vector computations return for its ninth iteration. It aims to provide a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
 
 == Removed
 
