@@ -66,13 +66,15 @@ We can enable it through the following JVM options: `-XX:+UnlockExperimentalVMOp
 
 This enhancement was inspired by the experiments done in function of https://wiki.openjdk.org/display/lilliput[Project Lilliput] which found that many workloads have an average object size of 32 to 64 bytes.
 
-It proposes to reduce the object header size in the HotSpot JvM from between 96 and 128 bits down to 64 bits on 64-bit architectures. An eye is also being kept on it not introducing any major throughput or latency overhead. It is disabled by default given its experimental nature to avoid unintended consequences. 
+It proposes to reduce the object header size in the HotSpot JvM from between 96 and 128 bits down to 64 bits on 64-bit architectures. An eye is also being kept on it not introducing any major throughput or latency overhead. It is disabled by default given its experimental nature to avoid unintended consequences.
+
+=== https://openjdk.org/jeps/479[JEP 479: Remove the Windows 32-bit x86 Port]
+
+As planned after the deprecation for removal in JDK 21 (JEP 449) the Windows 32 bit X86 bit source code and build support has been removed.
 
 == Targeted
 
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
-
-- https://openjdk.org/jeps/479[JEP 479: Remove the Windows 32-bit x86 Port]  - As planned after the deprecation for removal in JDK 21 (JEP 449) the Windows 32 bit X86 bit source code and build support has been removed.
 
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
 
