@@ -48,6 +48,24 @@ This iteration adds a new `Float16` which supports 16-bit variables in IEEE 754 
 
 It has also been confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
 
+=== https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe]
+
+A lot of low-level frameworks use the `Unsafe` class for faster memory access, however this class was always as an internal class and is officially unsupported and undocumented.
+
+In "recent" releases we've received alternative methods to achieve the same thing, and as communicated when they were deprecated in JDK23 are slowly being phased out.
+
+As of JDK 24 this will result in an `WARNING`, and in a future release the invocations will by default escalate to an exception.
+
+The better approaches are:
+
+==== https://openjdk.org/jeps/193[JEP 193: Variable Handles]
+
+`VarHandle` landed in Java 9 and allows us a modern and type-safe way to handle variable access.
+
+==== https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/package-summary.html[Foreign Function & Memory API]
+
+This API, also known as the FFM API landed in JDK 22 through https://openjdk.org/jeps/454[JEP 454] and allows us to safely interact with native memory and functions.
+
 == HotSpot
 
 === https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)]
@@ -87,8 +105,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
 
 - https://openjdk.org/jeps/491[JEP 491: Synchronize Virtual Threads without Pinning] - which aims to improve scalability of synchronized methods & statements by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads.
-
-- https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe] - Starting in JDK 24, a runtime warning will be issued upon the first invocation of any method in sun.misc.Unsafe, which has been fully deprecated, with the recommendation that developers migrate to the standard VarHandle API (JEP 193) and Foreign Function & Memory API (JEP 454) to ensure smooth transitions in future JDK releases.
 
 == Integrated
 
