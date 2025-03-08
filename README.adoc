@@ -94,6 +94,10 @@ As planned after the deprecation for removal in JDK 21 (JEP 449) the Windows 32 
 
 The non-generational mode of the Z Garbage Collector (ZGC) will be removed to reduce the current maintenance cost of supporting two different modes as to speed up the development of new features.
 
+=== https://openjdk.org/jeps/501[JEP 501: Deprecate the 32-bit x86 Port for Removal]
+
+The final remaining 32-bit x86 port which is the one for Linux is being deprecated, and thus all downstream ones. After the 32-bit x86 port is removed, the only way to run Java programs on 32-bit x86 processors will be the architecture-agnostic https://openjdk.org/projects/zero/[Zero] port of the JDK.
+
 == Java Tools
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
