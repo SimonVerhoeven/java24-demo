@@ -106,6 +106,13 @@ This JEP aims to resolve this issue by making it possible for Virtual Threads th
 
 The final remaining 32-bit x86 port which is the one for Linux is being deprecated, and thus all downstream ones. After the 32-bit x86 port is removed, the only way to run Java programs on 32-bit x86 processors will be the architecture-agnostic https://openjdk.org/projects/zero/[Zero] port of the JDK.
 
+== Security
+
+=== https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)]
+
+This proposal aims to introduce an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs).
+KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11], and are one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
+
 == Java Tools
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
@@ -129,9 +136,6 @@ N/A
 == Preview
 
 - https://openjdk.org/jeps/401[JEP 401: Value Classes and Objects] - Enhances the java platform with value objects, which are class instances that lack an object identity, and only have final fields. Popular classes that represent simple values in the JDK such as Integer will be migrated, and there'll be support for compatible migration of user-defined classes. This will help to improve the memory footprint, locality and GC efficiency.
-
-- https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)
-] - This proposal aims to introduce an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs)
 
 - https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
 ] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
