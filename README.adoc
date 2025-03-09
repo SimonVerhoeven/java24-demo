@@ -112,6 +112,10 @@ The final remaining 32-bit x86 port which is the one for Linux is being deprecat
 
 This JEP first introduced as 455 returns without any changes. It aims to enhance pattern matching by allowing primitives in all pattern contexts, and allowing one to use them with instanceof and switch as well.
 
+=== https://openjdk.org/jeps/492[JEP 492: Flexible Constructor Bodies (Third Preview)]
+
+This proposed Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases: a prologue and epilogue respectively to help developers place initialization logic more intuitively while preserving existing instantiation safeguards. This proposal has not changed compared to the second preview.
+
 == Security
 
 === https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)]
@@ -193,9 +197,6 @@ N/A
 
 - https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
 ] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
-
-- https://openjdk.org/jeps/492[JEP 492: Flexible Constructor Bodies (Third Preview)
-] - This proposed Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases—a prologue and epilogue—to help developers place initialization logic more intuitively while preserving existing instantiation safeguards.
 
 - https://openjdk.org/jeps/494[JEP 494: Module Import Declarations (Second Preview)
 ] - This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself.
