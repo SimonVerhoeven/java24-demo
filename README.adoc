@@ -113,6 +113,16 @@ The final remaining 32-bit x86 port which is the one for Linux is being deprecat
 This proposal aims to introduce an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs).
 KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11], and are one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
 
+=== https://openjdk.org/jeps/486[JEP 486: Permanently Disable the Security Manager]
+
+The Security Manager, deprecated in Java 17, has now been permanently disabled in JDK 24 and is slated for complete removal in a future release. Originally designed to secure untrusted code (e.g., applets), the Security Manager provided a set of checks for actions like thread creation and file access. However, it was complex to maintain and had a significant performance footprint when enabled. Its removal has led to the deletion of over 14,000 lines of code, simplifying the JDK.
+
+Opinions on the removal are divided. While most developers are unaffected, some platforms—particularly those with plugin systems like Kafka Connect, Elasticsearch, and Kestra—face challenges. These systems rely on executing untrusted code, and the Security Manager provided a built-in mechanism for enforcing security policies. Without it, developers must now implement alternatives such as sandboxing (e.g., Docker, GraalVM) or custom access controls using Java agents.
+
+While modern security needs are better addressed by tools like containers and OS-level sandboxing, the transition away from the Security Manager requires effort and may not fully replicate its functionality for all use cases.
+
+An interesting read on this topic is also: https://stuartmarks.wordpress.com/2024/12/12/detoxifying-the-jdk-source-code/[Stuart Marks - Detoxifying the JDK Source Code].
+
 == Java Tools
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
@@ -126,8 +136,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 == Integrated
 
 - https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking] - This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of pre-loaded and pre-linked classes for subsequent runs. It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools. The approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
-
-- https://openjdk.org/jeps/486[JEP 486: Permanently Disable the Security Manager] - This proposal aims to phase out the Security Manager, which has been largely unused for securing client and server-side Java code, by removing the ability to enable it during runtime and revising the Java Platform specification to minimize its references. The changes will have minimal impact on most applications and tools, with the goal of improving JDK maintainability by reducing the complexity of resource-access decision delegation. The Security Manager API will be retained in this release to provide existing code maintainers time to migrate, with no intention of providing a replacement for its previous sandboxing or API interception functionalities.
 
 == Candidate
 
