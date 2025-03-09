@@ -2,6 +2,8 @@ package dev.simonverhoeven.java24demo.preview;
 
 // JEP 488 - Primitive Types in Patterns, instanceof, and switch (Second Preview)
 
+import java.security.SecureRandom;
+
 public class PrimitiveTypes {
     record ExamResults(int score){}
 
@@ -20,7 +22,7 @@ public class PrimitiveTypes {
 
     // We can now pattern match using primitive types, which makes switching to type patterns easier as well
     public void patterns() {
-        int number = 0;
+        int number = new SecureRandom().nextInt();
 
         if (number instanceof int num) {
             System.out.println(num);
