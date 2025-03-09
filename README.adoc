@@ -158,8 +158,8 @@ This proposal integrates ML-DSA into Java's security APIs, thus providing implem
 And supporting three parameter sets:
 
 * `ML-DSA-44`
-* `ML-DSA-65,`
-* `ML-DSA-87.`
+* `ML-DSA-65`
+* `ML-DSA-87`
 
 This integration directly into the JDK enables a smooth adoption of quantum-resistant cryptography across all supported platforms, which will help future-proofing our applications against quantum computing threats. This aligns with https://www.nist.gov/[NIST]'s recommendation to transition to post-quantum algorithms within the next decade.
 
