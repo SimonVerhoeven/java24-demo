@@ -191,10 +191,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 
 - https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking] - This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of pre-loaded and pre-linked classes for subsequent runs. It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools. The approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
 
-== Candidate
-
-N/A
-
 == Preview
 
 - https://openjdk.org/jeps/401[JEP 401: Value Classes and Objects] - Enhances the java platform with value objects, which are class instances that lack an object identity, and only have final fields. Popular classes that represent simple values in the JDK such as Integer will be migrated, and there'll be support for compatible migration of user-defined classes. This will help to improve the memory footprint, locality and GC efficiency.
@@ -204,10 +200,6 @@ N/A
 
 - https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
 ] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
-
-== Removed
-
-N/A
 
 == Lookahead
 
