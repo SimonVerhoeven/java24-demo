@@ -145,6 +145,24 @@ It also facilitates key generation and certificate signing via the keytool comma
 
 This integration directly into the JDK enables a smooth adoption of quantum-resistant cryptography across all supported platforms, which will help future-proofing our applications against quantum computing threats. This aligns with https://www.nist.gov/[NIST]'s recommendation to transition to post-quantum algorithms within the next decade.
 
+=== https://openjdk.org/jeps/497[JEP 497: Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm]
+
+JEP 497 introduces the Module-Lattice-Based Digital Signature Algorithm (ML-DSA), a quantum-resistant algorithm standardized by NIST in https://csrc.nist.gov/pubs/fips/204/final[FIPS 204], to enhance the security of Java applications. It is designed to withstand attacks from future quantum computers, which could break current algorithms like RSA and Diffie-Hellman using https://www.wikiwand.com/en/articles/Shor's_algorithm[Shor's algorithm]. While quantum computers capable of such attacks are still far off (requiring thousands of Qubits, compared to today's ~64 Qubit systems), the transition to quantum-resistant algorithms is urgent to protect against "harvest now, decrypt later" threats.
+
+This proposal integrates ML-DSA into Java's security APIs, thus providing implementations for:
+
+* `KeyPairGenerator`
+* `KEM`
+* `KeyFactory`
+
+And supporting three parameter sets:
+
+* `ML-DSA-44`
+* `ML-DSA-65,`
+* `ML-DSA-87.`
+
+This integration directly into the JDK enables a smooth adoption of quantum-resistant cryptography across all supported platforms, which will help future-proofing our applications against quantum computing threats. This aligns with https://www.nist.gov/[NIST]'s recommendation to transition to post-quantum algorithms within the next decade.
+
 == Tools
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
