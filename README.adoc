@@ -120,6 +120,10 @@ This proposed Java language feature allows statements before explicit constructo
 
 This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself. For example: `import module java.base;`.
 
+=== https://openjdk.org/jeps/495[JEP 495: Simple Source Files and Instance Main Methods (Fourth Preview)]
+
+This preview which hasn't changed from it's previous iteration where it was known as `implicitly Declared Classes and Instance Main Methods,` would enable simplified programs by allowing them to be defined in an implicit class and an instance method `void main()`.
+
 == Security
 
 === https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)]
