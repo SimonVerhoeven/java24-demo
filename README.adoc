@@ -110,6 +110,12 @@ At the moment this process involves three steps (there are plans to streamline t
 
 On my local machine, Spring PetClinic startup with AOT cache took 2.7 seconds versus 4.6 without.
 
+=== https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]
+
+Simplifies the G1 Garbage Collection barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline.
+
+This makes the G1 barriers more comprehensible, and reduces the C2 execution time when using the G1 collector. Additionally, it guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
+
 === https://openjdk.org/jeps/490[JEP 490: ZGC: Remove the Non-Generational Mode]
 
 The non-generational mode of the Z Garbage Collector (ZGC) will be removed to reduce the current maintenance cost of supporting two different modes as to speed up the development of new features.
@@ -206,10 +212,6 @@ This integration directly into the JDK enables a smooth adoption of quantum-resi
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
 
 This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
-
-== Targeted
-
-- https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
 
 == Preview
 
