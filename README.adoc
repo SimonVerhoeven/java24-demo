@@ -90,6 +90,26 @@ It proposes to reduce the object header size in the HotSpot JvM from between 96 
 
 As planned after the deprecation for removal in JDK 21 (JEP 449) the Windows 32 bit X86 bit source code and build support has been removed.
 
+===  https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking]
+
+This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of preloaded and pre-linked classes for subsequent runs.
+
+It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools.
+
+This approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
+
+One major differentiator from GraalVM which offers a similar functionality all JVM functionalities are preserved. Classes not present in the archive will be dynamically loaded by the JVM.
+
+At the moment this process involves three steps (there are plans to streamline the process of cache creation):
+
+. Performing a training run to record its AOT configuration (into a file called `app.aotconf`) => `java -XX:AOTMode=record -XX:AOTConfiguration=app.aotconf \
+-cp app.jar dev.simonverhoeven.DemoApp`
+. Use the configuration to create a cache (into a file called `app.aot`) => `java -XX:AOTMode=create -XX:AOTConfiguration=app.aotconf \
+-XX:AOTCache=app.aot -cp app.jar`
+. Running our application with the cache (note that in case it can't be used the JVM will issue a warning, and then continue) => `java -XX:AOTCache=app.aot -cp app.jar dev.simonverhoeven.DemoApp`
+
+On my local machine, Spring PetClinic startup with AOT cache took 2.7 seconds versus 4.6 without.
+
 === https://openjdk.org/jeps/490[JEP 490: ZGC: Remove the Non-Generational Mode]
 
 The non-generational mode of the Z Garbage Collector (ZGC) will be removed to reduce the current maintenance cost of supporting two different modes as to speed up the development of new features.
@@ -190,10 +210,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 == Targeted
 
 - https://openjdk.org/jeps/475[JEP 475: Late Barrier Expansion for G1]  - Simplifies the G1 GC barrier implementation, which stores information about the application memory access by moving the expansion of the expansion thereof to later in the C2 JIT's compilation pipeline. This makes the G1 barriers more comprehensible, reduced the C2 execution time when using the G1 collector and guarantees the preservation of the C2 invariants while preserving the quality of C2 generated code.
-
-== Integrated
-
-- https://openjdk.org/jeps/483[JEP 483: Ahead-of-Time Class Loading & Linking] - This feature aims to enhance Java application startup performance by monitoring an application during one run and creating a cache of pre-loaded and pre-linked classes for subsequent runs. It seeks to improve startup time by leveraging the typically consistent startup process of applications, without requiring changes to application code, command-line usage, or build tools. The approach provides a foundation for future improvements in startup and warmup time, with the current implementation focusing on caching classes loaded by built-in class loaders from the class path, module path, and JDK itself.
 
 == Preview
 
