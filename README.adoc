@@ -40,6 +40,13 @@ This JEP enhances the Stream API with new intermediate operations to facilitate 
 
 We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j].
 
+=== https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)]
+
+Scoped values are being introduced as a preview API for the fourth time.
+It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
+
+The fourth iteration mostly remains the same, the only changes is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
+
 === https://openjdk.org/jeps/489[JEP 489 Vector API (Ninth Incubator)]
 
 The ninth iteration API of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
@@ -228,11 +235,6 @@ This integration directly into the JDK enables a smooth adoption of quantum-resi
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
 
 This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
-
-== Preview
-
-- https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
-] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
 
 == Lookahead
 
