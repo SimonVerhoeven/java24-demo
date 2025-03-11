@@ -66,6 +66,22 @@ The better approaches are:
 
 This API, also known as the FFM API landed in JDK 22 through https://openjdk.org/jeps/454[JEP 454] and allows us to safely interact with native memory and functions.
 
+=== https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)]
+
+This proposal aims to address some of the frequently encountered challenges in concurrent programming by introducing an API that treats groups of related tasks running in different threads as a single unit of work.
+
+The proposed approach, also known as structured concurrency will help us streamline error handling, cancellation, and observability, making concurrent code more reliable and easier to manage.
+
+The main target is promoting a style of concurrent programming that eliminates common risks such as thread leaks and cancellation delays, while also improving the observability of concurrent code. The API itself is centered around `StructuredTaskScope`, which allows us to define a clear hierarchy of tasks and subtasks, ensuring that all subtasks are completed or cancelled before the parent task exits. This enforces a structured flow of execution, similar to single-threaded code, where subtasks are confined to the lexical scope of their parent task. The API also provides built-in shutdown policies (e.g., `ShutdownOnFailure` and `ShutdownOnSuccess`) to handle common concurrency patterns, such as cancelling all subtasks if one fails or succeeds. We can also define our own shutdown policies.
+
+By reifying the task-subtask relationship at runtime, structured concurrency makes it easier for us to reason about and debug concurrent programs. It also integrates well with observability tools, such as thread dumps, which can now display the hierarchical structure of tasks and subtasks.
+
+This enhancement does not aim to replace existing concurrency constructs like `ExecutorService` or `Future`, but rather to complement them by offering a more structured and reliable alternative for managing concurrent tasks.
+
+JEP 499 builds on previous previews (JEP https://openjdk.org/jeps/428[428], https://openjdk.org/jeps/437[437], https://openjdk.org/jeps/453[453], https://openjdk.org/jeps/462[462], and https://openjdk.org/jeps/480[480]) and is designed to work seamlessly with virtual threads (https://openjdk.org/jeps/444[JEP 444]), which enables lightweight, high-throughput concurrency. There are no changes in this preview.
+
+For now, it'll remain in preview to gather further feedback, so please do try it out and share your feedback! It continues in https://openjdk.org/jeps/8340343[JEP Draft 8340343, Structured Concurrency (Fifth Preview)].
+
 == HotSpot
 
 === https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)]
@@ -219,9 +235,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 
 - https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
 ] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
-
-- https://openjdk.org/jeps/499[JEP 499: Structured Concurrency (Fourth Preview)
-] - This is the fourth iteration of the JEP geared towards making concurrent programming easier to develop.
 
 == Lookahead
 
