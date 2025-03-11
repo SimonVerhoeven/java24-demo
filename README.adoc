@@ -231,8 +231,6 @@ This aims to facilitate run-time image generate from modules regardless of what 
 
 == Preview
 
-- https://openjdk.org/jeps/401[JEP 401: Value Classes and Objects] - Enhances the java platform with value objects, which are class instances that lack an object identity, and only have final fields. Popular classes that represent simple values in the JDK such as Integer will be migrated, and there'll be support for compatible migration of user-defined classes. This will help to improve the memory footprint, locality and GC efficiency.
-
 - https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)
 ] - Scoped values are being introduced as a preview API (fourth iteration) to enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
 
