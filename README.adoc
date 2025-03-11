@@ -40,6 +40,8 @@ This JEP enhances the Stream API with new intermediate operations to facilitate 
 
 We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j].
 
+For more details the https://nipafx.dev/inside-java-newscast-57/[Inside Java newscast number 57] is certainly also worth a watch.
+
 === https://openjdk.org/jeps/487[JEP 487: Scoped values (Fourth Preview)]
 
 Scoped values are being introduced as a preview API for the fourth time.
