@@ -11,7 +11,7 @@ Let us take a closer look at what's awaiting us!
 
 === https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI]
 
-This JEP is geared towards issuing warnings in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default].
+This JEP will ensure that warnings are issued in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default].
 These warnings and future restrictions can be selectively disabled by enabling those specific interfaces when needed.
 
 When using a native function we'll get a `WARNING` at startup unless we use the JVM `--enable-native-access` option to authorize it, or add the `Enable-Native-Access` manifest entry.
@@ -55,7 +55,7 @@ The ninth iteration API of an API for vector computations. It aims to be a way t
 
 This iteration adds a new `Float16` which supports 16-bit variables in IEEE 754 binary16 format using the Vector API.
 
-It has also been confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
+The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
 
 === https://openjdk.org/jeps/498[JEP 498: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe]
 
