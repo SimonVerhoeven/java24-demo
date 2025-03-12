@@ -170,7 +170,14 @@ This proposed Java language feature allows statements before explicit constructo
 
 === https://openjdk.org/jeps/494[JEP 494: Module Import Declarations (Second Preview)]
 
-This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself. For example: `import module java.base;`.
+This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself. It will also allow beginners to more easily use third-party libraries and core Java classes without needing to know their exact location within the package hierarchy.
+
+Compared to the first revision there are two additions:
+
+* the restriction that no module is able to declare a transitive dependency on the `java.base` module has been lifted, and the `java.se module` now transitively requires the `java.base` module
+* type-import-on-demand declarations are now allowed to shadow module import declarations.
+
+For example: `import module java.base;`.
 
 === https://openjdk.org/jeps/495[JEP 495: Simple Source Files and Instance Main Methods (Fourth Preview)]
 
