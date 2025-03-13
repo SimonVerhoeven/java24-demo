@@ -244,7 +244,26 @@ This integration directly into the JDK enables a smooth adoption of quantum-resi
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
 
-This aims to facilitate run-time image generate from modules regardless of what those modules were (JMOD, modular JAR, part of a previously linked run-time, etc.). This will also reduce the JDK size by enabling the jlink tool to create custom images without using the JDK's JMOD files. NOTE: this feature might not be enabled by all vendors.
+This enhancement reduces the JDK's size by roughly 25% by enabling the `jlink` tool to create custom run-time images without relying on the JDK's JMOD files. *Note:* Since this feature is not enabled by default, and not all vendors may choose to implement this feature the JDK needs to be built with the `--enable-linkable-runtime` option, the resulting JDK omits JMOD files, and `jlink` can extract modules directly from the run-time image itself. This capability is particularly advantageous in cloud environments, where smaller container images improve deployment efficiency.
+
+The `jlink` tool in such a JDK can consume modules from the run-time image, modular JARs, or JMOD files, preferring the latter if available. For example, creating a run-time image with only `java.base` and `java.xml` works as usual:
+
+[source,bash]
+----
+$ jlink --add-modules java.xml --output image
+$ image/bin/java --list-modules
+java.base@24
+java.xml@24
+----
+
+The resulting image is about 60% smaller than a full JDK run-time image. For more complex cases, such as linking an application module (`app`) and its dependency (`lib`), the process remains straightforward:
+
+[source,bash]
+----
+$ jlink --module-path mlib --add-modules app --output app
+----
+
+However, there are some restrictions: `jlink` cannot create images containing itself (`jdk.jlink`), fails if user-editable configuration files (e.g., `java.security`) are modified, and does not support cross-linking or `--patch-module`.
 
 == Lookahead
 
