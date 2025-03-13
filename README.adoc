@@ -38,7 +38,9 @@ It is geared towards helping developers handle the swifter release cadence, and 
 
 This JEP enhances the Stream API with new intermediate operations to facilitate new data operations that previously weren't easily achievable. This will be handled by facilitating the creation of custom intermediate operations to manipulate the streams, rather than a lot of new methods of the specifically requested functions.
 
-We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j].
+We're already seeing some interesting libraries pop up with useful gatherers such as https://github.com/tginsberg/gatherers4j[Gatherers4j]
+
+I've already experimented quite a bit with API during the latest https://adventofcode.com/[Advent of Code], and it certainly made some challenges a lot easier..
 
 For more details the https://nipafx.dev/inside-java-newscast-57/[Inside Java newscast number 57] is certainly also worth a watch.
 
@@ -264,6 +266,16 @@ $ jlink --module-path mlib --add-modules app --output app
 ----
 
 However, there are some restrictions: `jlink` cannot create images containing itself (`jdk.jlink`), fails if user-editable configuration files (e.g., `java.security`) are modified, and does not support cross-linking or `--patch-module`.
+
+== Thoughts
+
+Once again, an impressive list of enhancements has been delivered, and significant progress has been made on long-running projects like Loom.
+
+We're seeing some powerful new features such as Stream which open up new possibilities for data processing, AOT class loading which may significantly reduce startup times for our applications, and quantum-resistant algorithms which help ensure Java remains secure in the face of future threats.
+
+Java 24 offers improvements for both newcomers and seasoned developers, underscoring the language's enduring relevance. The strong focus on security addresses today's critical challenges, while reductions in resource consumption help lower Java's ecological footprint and increase the cost-effectiveness for cloud and enterprise environments.
+
+Given what we've seen in this release, and what's already in the works for Java 25 I'm certainly optimistic about the future!
 
 == Lookahead
 
