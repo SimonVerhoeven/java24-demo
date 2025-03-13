@@ -271,13 +271,16 @@ General availability of Java 25 is planned for September 2025, and while at the 
 
 Some of the ones I hope and expect to see land are:
 
-* https://openjdk.org/jeps/495[JEP-495: Simple Source Files and Instance Main Methods (Fourth Preview)]- which aims to further enhance the onboarding experience
+* https://openjdk.org/jeps/495[JEP-495: Simple Source Files and Instance Main Methods (Fourth Preview)] - which would make the language more accessible to new developers.
 
-* https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)] - which would bring us immutable value holders that are at most initialized once
+* https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)] - which would bring us immutable value holders that are at most initialized once as it would help us move towards deferred immutability through `StableValue` and `StableSupplier`.
 
-* https://openjdk.org/jeps/8340343[JEP draft 8340343: Structured Concurrency (Fifth Preview)] - structured concurrency has received quite a bit of feedback so far, so I hope to see it land, but we'll have to see
+* https://openjdk.org/jeps/8340343[JEP draft 8340343: Structured Concurrency (Fifth Preview)] - structured concurrency has received quite a bit of feedback so far, so I hope to see it land, but we'll have to see. It will certainly help out when writing multithreaded applications, and it'll be nice to see https://openjdk.org/projects/loom/[project Loom] progress.
 
-* https://openjdk.org/jeps/8326035[JEP draft 8326035: CDS Object Streaming] - proposes to add an object archiving mechanism for Class-Data Sharing (CDS) in the Z Garbage Collector (ZGC)
+* https://openjdk.org/jeps/8326035[JEP draft 8326035: CDS Object Streaming] - proposes to add an object archiving mechanism for Class-Data Sharing (CDS) in the Z Garbage Collector (ZGC) since it'll enhance the usage of the AOT cache from https://openjdk.org/projects/leyden/[project Leyden]
 
-* https://openjdk.org/jeps/8300911[JEP draft 8300911: PEM API (Preview)] - introduces an easy-to-use API for encoding and decoding Privacy-Enhanded Mail (PEM) format.
+* https://openjdk.org/jeps/8300911[JEP draft 8300911: PEM API (Preview)] - introduces an easy-to-use API for encoding and decoding Privacy-Enhanced Mail (PEM) format as it helps underscore Java's commitment to enabling highly secure applications and address one of the pain points expressed in the https://mail.openjdk.org/pipermail/security-dev/2022-April/029757.html[ Java Cryptographic Extensions Survey] in April 2022.
 
+While some of these are draft, and thus subject to change they do already give us a nice glance at what the architects are looking into.
+Furthermore, these changes help highlight Java's roadmap and continuous evolution.
+If you're as excited as I am about all these changes, and want to provide feedback I highly recommend trying out the https://jdk.java.net/25/[preview builds]!
