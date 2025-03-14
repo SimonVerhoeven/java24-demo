@@ -267,6 +267,37 @@ $ jlink --module-path mlib --add-modules app --output app
 
 However, there are some restrictions: `jlink` cannot create images containing itself (`jdk.jlink`), fails if user-editable configuration files (e.g., `java.security`) are modified, and does not support cross-linking or `--patch-module`.
 
+== General
+
+Beyond the major enhancement proposals, Java 24 includes a variety of smaller updates, removals, and deprecations that further improve the language.
+
+Some examples:
+
+Additions:
+
+* Unicode 16 support which enables better handling of modern text and emojis
+* New Java Flight Recorder events to further enhance observability
+* New MXBean to Monitor and Manage Virtual Thread Scheduler complementing the enhancements from project Loom
+* Support for including security properties files so security properties can more easily be managed in a centralized manner
+
+Removals:
+
+* Linux Desktop GTK2 Support as all Linux distributions supported by JDK 24 provide GTK3 support
+* JDK1.1 Compatible Behavior for "EST", "MST", and "HST" Time Zones, the appropriate zone IDs listed in https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/time/ZoneId.html#SHORT_IDS[ZoneId.SHORT_IDS] should be used
+
+Deprecations:
+
+* jstatd tool to further reduce dependencies on Remote Method Invocation, the monitoring of local VMs using the Attach API isn't impacted
+* debugd subcommand of the jhsdb tool as this remote debug server is not widely used, nor documented and dependencies on Remote Method Invocation are being reduced as much as possible
+* jrunscript tool as this tool is no longer functional given the removal of the JavaScript engine in Java 15 as part of https://openjdk.org/jeps/372[JEP 372]
+
+Issues:
+
+* Undefined type variables no longer resulting in null, but rather throwing a `TypeNotPresentException`
+* Single-line leading `///` dangling comments will no longer trigger a warning
+
+As always, I recommend checking out the https://jdk.java.net/24/release-notes[release notes]
+
 == Thoughts
 
 Once again, an impressive list of enhancements has been delivered, and significant progress has been made on long-running projects like Loom.
