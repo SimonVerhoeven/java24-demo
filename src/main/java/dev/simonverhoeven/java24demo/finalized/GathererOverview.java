@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java24demo.finalized.gatherers;
+package dev.simonverhoeven.java24demo.finalized;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
