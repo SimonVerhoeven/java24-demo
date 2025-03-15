@@ -327,3 +327,14 @@ Some of the ones I hope and expect to see land are:
 While some of these are draft, and thus subject to change they do already give us a nice glance at what the architects are looking into.
 Furthermore, these changes help highlight Java's roadmap and continuous evolution.
 If you're as excited as I am about all these changes, and want to provide feedback I highly recommend trying out the https://jdk.java.net/25/[preview builds]!
+
+== Resources
+
+Some useful resources to dive deeper into the Java ecosystem, and stay up-to-date are:
+
+* https://jdk.java.net/24/release-notes[The release notes] - The official source for all changes, including new features, bug fixes, and deprecations
+* https://javaalmanac.io/jdk/24/[The Java version almanac] - A great resource with details on distributions, and API differences between various releases
+* https://foojay.io/[Foojay] - A magnificent Java community offering articles, tutorials, and discussions on the latest in the Java ecosystem
+* https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
+* https://inside.java/[Inside Java] - News updates by Java team members at Oracle
+* https://www.jcp.org/ [Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
