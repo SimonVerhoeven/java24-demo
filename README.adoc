@@ -9,6 +9,10 @@ Let us take a closer look at what's awaiting us!
 
 == Core
 
+The core Java library has once again been enriched with a multitude of new features, including several preview APIs, driving the language ever forward to ensure it can meet today's needs. As expected, some enhancements like the Vector API remain in incubation, while others, such as the Gatherer API, have now landed.
+
+Let's take a look at the exciting new features!
+
 === https://openjdk.org/jeps/472[JEP 472: Prepare to Restrict the Use of JNI]
 
 This JEP will ensure that warnings are issued in a consistent manner in case of JNI or FFM usage that goes against https://openjdk.org/jeps/8305968[integrity by default].
@@ -95,6 +99,10 @@ For now, it'll remain in preview to gather further feedback, so please do try it
 
 == HotSpot
 
+Proper attention has been paid to make sure that the HotSpot remains efficient and maintainable by addressing such key challenges as the pinning issue plaguing Virtual threads, further garbage collection enhancements, and the deprecation and removal of several legacy sections.
+
+Let us take a look at what was changed.
+
 === https://openjdk.org/jeps/404[JEP 404: Generational Shenandoah (Experimental)]
 
 This aims to enhance the Shenandoah GC with an experimental generational mode, without impacting non-generational.
@@ -164,6 +172,10 @@ The final remaining 32-bit x86 port which is the one for Linux is being deprecat
 
 == Language specification
 
+The Java language continues to evolve with various enhancements to make it more flexible, expressive and convenient to use. There are enhancements for people of all skill levels geared towards making sure it can meet today's and tomorrow's needs.
+
+Let's take a look at the latest preview features, including updates to pattern matching, flexible constructors, and simplified module imports, and how they've evolved based on community feedback.
+
 === https://openjdk.org/jeps/488[JEP 488: Primitive Types in Patterns, instanceof, and switch (Second Preview)]
 
 This JEP first introduced as 455 returns without any changes. It aims to enhance pattern matching by allowing primitives in all pattern contexts, and allowing one to use them with instanceof and switch as well.
@@ -188,6 +200,11 @@ For example: `import module java.base;`.
 This preview which hasn't changed from it's previous iteration where it was known as `implicitly Declared Classes and Instance Main Methods,` would enable simplified programs by allowing them to be defined in an implicit class and an instance method `void main()`.
 
 == Security
+
+Java's security continues to evolve with enhancements such as quantum-resistant algorithms and the removal of outdated features.
+These changes help ensure that Java remains a secure and future-proof platform. Not only are today's security needs tackled, but the language is also preparing for tomorrow's challenges such as the rise of quantum computing.
+
+Let's dive into the key security updates!
 
 === https://openjdk.org/jeps/478[JEP 478: Key Derivation Function API (Preview)]
 
@@ -245,6 +262,8 @@ And supporting three parameter sets:
 This integration directly into the JDK enables a smooth adoption of quantum-resistant cryptography across all supported platforms, which will help future-proofing our applications against quantum computing threats. This aligns with https://www.nist.gov/[NIST]'s recommendation to transition to post-quantum algorithms within the next decade.
 
 == Tools
+
+The tooling ecosystem is evolving to better meet today's deployment and image creation needs, helping developers address the demands of modern development workflows.
 
 === https://openjdk.org/jeps/493[JEP 493: Linking Run-Time Images without JMODs]
 
@@ -304,11 +323,13 @@ As always, I recommend checking out the https://jdk.java.net/24/release-notes[re
 
 Once again, an impressive list of enhancements has been delivered, and significant progress has been made on long-running projects like Loom.
 
-We're seeing some powerful new features such as Stream which open up new possibilities for data processing, AOT class loading which may significantly reduce startup times for our applications, and quantum-resistant algorithms which help ensure Java remains secure in the face of future threats.
+We're seeing some powerful new features such as Stream Gatherers which open up new possibilities for data processing, AOT class loading which may significantly reduce startup times for our applications, and quantum-resistant algorithms which help ensure Java remains secure in the face of future threats.
 
 Java 24 offers improvements for both newcomers and seasoned developers, underscoring the language's enduring relevance. The strong focus on security addresses today's critical challenges, while reductions in resource consumption help lower Java's ecological footprint and increase the cost-effectiveness for cloud and enterprise environments.
 
 Given what we've seen in this release, and what's already in the works for Java 25 I'm certainly optimistic about the future!
+
+You can find the latest version of this article, and code examples in my https://github.com/SimonVerhoeven/java24-demo[java24-demo] repository.
 
 == Lookahead
 
@@ -326,7 +347,7 @@ Some of the ones I hope and expect to see land are:
 
 * https://openjdk.org/jeps/8300911[JEP draft 8300911: PEM API (Preview)] - introduces an easy-to-use API for encoding and decoding Privacy-Enhanced Mail (PEM) format as it helps underscore Java's commitment to enabling highly secure applications and address one of the pain points expressed in the https://mail.openjdk.org/pipermail/security-dev/2022-April/029757.html[ Java Cryptographic Extensions Survey] in April 2022.
 
-While some of these are draft, and thus subject to change they do already give us a nice glance at what the architects are looking into.
+While some of these are still in draft form and subject to change they do already give us a nice glance at what the architects are looking into.
 Furthermore, these changes help highlight Java's roadmap and continuous evolution.
 If you're as excited as I am about all these changes, and want to provide feedback I highly recommend trying out the https://jdk.java.net/25/[preview builds]!
 
