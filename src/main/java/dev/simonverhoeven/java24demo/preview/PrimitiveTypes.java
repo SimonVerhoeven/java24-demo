@@ -1,8 +1,8 @@
 package dev.simonverhoeven.java24demo.preview;
 
-// JEP 488 - Primitive Types in Patterns, instanceof, and switch (Second Preview)
-
 import java.security.SecureRandom;
+
+/// JEP 488 - Primitive Types in Patterns, instanceof, and switch (Second Preview)
 
 public class PrimitiveTypes {
     record ExamResults(int score){}

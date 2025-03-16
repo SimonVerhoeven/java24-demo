@@ -1,8 +1,6 @@
 package dev.simonverhoeven.java24demo.preview;
 
-/*
-JEP 982 - Flexible Constructor Bodies (Third Preview)
-*/
+/// JEP 982 - Flexible Constructor Bodies (Third Preview)
 public class Super extends Life{
     private static final int MEANING_OF_LIFE = 42;
 
