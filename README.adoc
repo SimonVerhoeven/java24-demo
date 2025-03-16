@@ -151,10 +151,12 @@ The non-generational mode of the Z Garbage Collector (ZGC) will be removed to re
 
 To provide some context for this JEP: Virtual Threads are lightweight threads managed by the JVM, designed to have minimal overhead compared to traditional platform threads. They are particularly well-suited for I/O-bound or highly concurrent applications, as they enable efficient scaling without the resource constraints associated with platform threads. When executed, virtual threads are mounted onto platform threads (also called carrier threads), with the JVM handling scheduling and context switching. This abstraction simplifies concurrent programming by reducing the need for complex thread-pooling or asynchronous programming constructs. Virtual threads were introduced as part of https://openjdk.org/projects/loom/[Project Loom] and formalized in https://openjdk.org/jeps/444[JEP 444].
 
-An issue up until now is that Java synchronization didn't unmount the platform thread, thus the platform thread was *pinned* to the virtual thread which negatively impacted the scalability of virtual threads.
+An issue up until now was that Java synchronization didn't unmount the platform thread, thus the platform thread was *pinned* to the virtual thread which negatively impacted the scalability of virtual threads.
 For example, if too many threads are pinned to the platform threads available to the JVM we can run into starvation, or even deadlock issues.
 
 This JEP aims to resolve this issue by making it possible for Virtual Threads that block in such cases to release their underlying platform threads. This will almost fully eliminate cases of VT being pinned to platform threads and resolve one of the most frequently encountered performance issue when adapting them.
+
+Netflix also shared an interesting writeup on this issue on their TechBlog called https://netflixtechblog.com/java-21-virtual-threads-dude-wheres-my-lock-3052540e231d[Java 21 Virtual Threads - Dude, Where’s My Lock?].
 
 === https://openjdk.org/jeps/501[JEP 501: Deprecate the 32-bit x86 Port for Removal]
 
