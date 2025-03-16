@@ -360,4 +360,4 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up-to-dat
 * https://foojay.io/[Foojay] - A magnificent Java community offering articles, tutorials, and discussions on the latest in the Java ecosystem
 * https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
 * https://inside.java/[Inside Java] - News updates by Java team members at Oracle
-* https://www.jcp.org/ [Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
+* https://www.jcp.org/[Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
