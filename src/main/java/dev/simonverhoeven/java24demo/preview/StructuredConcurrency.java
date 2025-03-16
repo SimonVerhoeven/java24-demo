@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 // JEP 499: Structured Concurrency (Fourth Preview)
 
-public class Structured {
+public class StructuredConcurrency {
 
     public GarderobeSelectionInput composeGarderobeSelectionInput(String userId) {
         try (final var scope = new StructuredTaskScope.ShutdownOnFailure()) {
